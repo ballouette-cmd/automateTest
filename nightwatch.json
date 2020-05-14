@@ -1,0 +1,67 @@
+{
+    "src_folders": [
+        "tests"
+    ],
+    "output_folder": "reports",
+    "page_objects_path": "",
+    "globals_path": "nightwatch.globals.js",
+    "selenium": {
+        "start_process": false,
+        "server_path": "./seleniumserver/selenium-server-standalone.jar",
+        "log_path": "",
+        "host": "mv194034",
+        "port": 4444,
+        "cli_args": {
+            "webdriver.chrome.driver": "./node_modules/chromedriver/bin/chromedriver",
+            "webdriver.ie.driver": "./node_modules/iedriver/bin/iedriver",
+            "webdriver.opera.driver": "./node_modules/operadriver/bin/operadriver_mac64/operadriver",
+            "webdriver.gecko.driver": "./node_modules/geckodriver/bin/geckodriver"
+        }
+    },
+    "test_workers": {
+        "enabled": true,
+        "workers": "auto"
+    },
+    "test_settings": {
+        "chrome": {
+            "desiredCapabilities": {
+                "marionette": true,
+                "platform": "LINUX",
+                "browserName": "chrome",
+                "version": "74.0.3729.169",
+                "seleniumProtocol": "WebDriver",
+                "chromeOptions": {
+                    "args": [
+                        "--headless",
+                        "--no-sandbox",
+                        "--disable-gpu",
+                        "--whitelisted-ip",
+                        "--enable-automation"
+                    ],
+                    "prefs": {
+                        "credentials_enable_service": false,
+                        "profile.password_manager_enabled": false,
+                        "rotatable": true
+                    },
+                    "acceptSslCerts": true
+                }
+            }
+        },
+        "firefox": {
+            "desiredCapabilities": {
+                "webdriver.firefox.profile" : "webdriver",
+                "platform": "LINUX",
+                "browser": "firefox",
+                "version": "67.0",
+                "marionnette": true
+            }
+        },
+        "opera": {
+            "desiredCapabilities": {
+                "platform": "LINUX",
+                "browserName": "operablink",
+                "version": "67.0.3575.137"
+            }
+        }
+    }
+}
